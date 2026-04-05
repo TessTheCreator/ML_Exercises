@@ -15,7 +15,7 @@ data = np.loadtxt('data.csv', delimiter = ',')
 X = data[:,:-1]
 y = data[:,-1]
 
-# TODO: Fill in code in the function below to implement a gradient descent
+#Fill in code in the function below to implement a gradient descent
 # step for linear regression, following a squared error rule. See the docstring
 # for parameters and returned variables.
 
@@ -36,11 +36,11 @@ def MSEStep(X, y, W, b, learn_rate=0.005):
     b_new : intercept following gradient descent step
     """
 
-    # TODO: compute errors
+    #compute errors
     y_pred = np.matmul(X, W) + b
     error = y - y_pred
 
-    # TODO: compute steps
+    #compute steps
     W_new = W + learn_rate * np.matmul(error, X)
     b_new = b + learn_rate * error.sum()
 
